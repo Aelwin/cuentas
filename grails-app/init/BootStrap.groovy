@@ -20,6 +20,8 @@ class BootStrap {
         new Cuenta(importe: 2.8f, nombre: desayunos, fecha: Date.parse("dd-MM-yyyy", "02-09-2016")).save()
         new Cuenta(importe: 2.8f, nombre: desayunos, fecha: Date.parse("dd-MM-yyyy", "05-09-2016")).save()
         new Cuenta(importe: 2.8f, nombre: desayunos, fecha: Date.parse("dd-MM-yyyy", "06-09-2016")).save()
+        new Cuenta(importe: 3.0f, nombre: desayunos, fecha: Date.parse("dd-MM-yyyy", "07-09-2016")).save()
+        new Cuenta(importe: 13f, nombre: otros, fecha: Date.parse("dd-MM-yyyy", "07-09-2016"), descripcion: "peluqería").save()
     }
     def destroy = {
     }
