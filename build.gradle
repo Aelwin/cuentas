@@ -74,7 +74,7 @@ dependencies {
     console "org.grails:grails-console"
 
     //Para desplegar en Heroku
-    compile 'org.eclipse.jetty:jetty-runner:9.2.11.v20150529'
+    //compile 'org.eclipse.jetty:jetty-runner:9.2.11.v20150529'
     compile 'com.github.jsimone:webapp-runner:8.0.30.2'
     runtime 'org.postgresql:postgresql:9.4-1201-jdbc4'
 }
