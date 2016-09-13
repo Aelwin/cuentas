@@ -15,7 +15,7 @@ class GastosController {
 
     def busqueda() {
         def criteria = Cuenta.createCriteria()
-        def gastos = criteria.list {
+        def gastos = criteria.list(params) {
             if (params.descripcion) {
                 ilike("descripcion", "%${params.descripcion}%")
             }
