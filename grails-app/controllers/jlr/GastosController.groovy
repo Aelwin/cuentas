@@ -4,6 +4,8 @@ import java.util.Date
 
 class GastosController {
 
+    def busquedaService
+
     def index() { 
     	respond NombreCuenta.list()
     }
@@ -15,21 +17,9 @@ class GastosController {
 
     def busqueda() {
         def criteria = Cuenta.createCriteria()
-        def gastos = criteria.list(params) {
-            if (params.descripcion) {
-                ilike("descripcion", "%${params.descripcion}%")
-            }
-            if (params.fechaDesde) {
-                between("fecha", params.fechaDesde, params.fechaHasta)
-            }
-            if (params.nombreGasto) {
-                eq("nombre", NombreCuenta.findByNombre(params.nombreGasto))
-            }
-            eq("tipo", TipoCuenta.GASTO)
-            order("fecha", "asc")
-        }
-    	def gastoTotal = gastos?.sum { it.importe }
-    	[gastos: gastos, gastosCount: gastos?.size(), gastoTotal: gastoTotal?:"0"]
+        def gastos = busquedaService.busquedaGastos(params)
+    	def gastoTotal = busquedaService.totalGastadoBusqueda(params)            
+    	[gastos: gastos, gastosCount: gastos.totalCount, gastoTotal: gastoTotal?:"0"]
     }
 
 }
