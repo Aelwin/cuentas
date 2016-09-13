@@ -14,17 +14,6 @@ class GastosController {
     }
 
     def busqueda() {
-    	/*def gastos
-    	def ordenacion = [sort: "fecha", order: "asc"]
-        if (params.descripcion) {            
-            gastos = Cuenta.findAllByDescripcionIlikeAndTipo("%${params.descripcion}%", TipoCuenta.GASTO, ordenacion)
-        } else if (params.fechaDesde && params.fechaHasta && params.nombreGasto) {    		
-    		gastos = Cuenta.findAllByFechaBetweenAndNombreAndTipo(params.fechaDesde, params.fechaHasta, NombreCuenta.findByNombre(params.nombreGasto), TipoCuenta.GASTO, ordenacion)
-    	} else if (params.nombreGasto) {
-    		gastos = Cuenta.findAllByNombreAndTipo(NombreCuenta.findByNombre(params.nombreGasto), TipoCuenta.GASTO, ordenacion)
-    	} else if (params.fechaDesde) {    		
-    		gastos = Cuenta.findAllByFechaBetweenAndTipo(params.fechaDesde, params.fechaHasta, TipoCuenta.GASTO, ordenacion)
-    	}*/
         def criteria = Cuenta.createCriteria()
         def gastos = criteria.list {
             if (params.descripcion) {
