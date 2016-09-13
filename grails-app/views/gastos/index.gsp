@@ -33,6 +33,13 @@
                         <g:select name="nombreGasto" from="${nombreCuentaList}" noSelection="['':'Seleccione...']"></g:select>
                     </div>
                 </fieldset>
+                <fieldset class="form">
+                    <h3>Buscar por descripción:</h3>
+                    <div>
+                        <label class="fieldcontain" for="descripcion"><g:message code="gasto.descripcion.label" /></label>
+                        <g:textField name="descripcion"  placeholder="${message(code: 'gasto.descripcion.buscar')}"/>
+                    </div>
+                </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="buscar" class="search" value="${message(code: 'default.button.search.label')}" />
                 </fieldset>
