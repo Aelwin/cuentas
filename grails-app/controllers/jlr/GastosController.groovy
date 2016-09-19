@@ -15,7 +15,8 @@ class GastosController {
     	[total: total]
     }
 
-    def busqueda() {
+    def busqueda(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
         def criteria = Cuenta.createCriteria()
         def gastos = busquedaService.busquedaGastos(params)
     	def gastoTotal = busquedaService.totalGastadoBusqueda(params)            
