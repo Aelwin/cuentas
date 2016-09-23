@@ -37,7 +37,7 @@ class BusquedaService {
                 eq("nombre", NombreCuenta.findByNombre(params.nombreGasto))
             }
             eq("tipo", TipoCuenta.GASTO)
-            order("fecha", "asc")
+            order(params.sort, params.order)
         }    
     }
 }

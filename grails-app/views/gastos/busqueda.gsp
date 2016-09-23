@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'cuenta.label', default: 'Cuenta')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title><g:message code="default.list.label" args="[entityName]" /></title>        
     </head>
     <body>
         <a href="#list-cuenta" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -33,8 +33,31 @@
                     <g:message code="gastos.total.label" args="${gastoTotal}" />
                 </span>
             </div>            
-            <f:table collection="${gastos}" domainClass="jlr.Cuenta" properties="['id', 'nombre', 'tipo', 'importe', 'fecha', 'descripcion']"/>
-
+            <!--<f:table collection="${gastos}" domainClass="jlr.Cuenta" properties="['id', 'nombre', 'tipo', 'importe', 'fecha', 'descripcion']"/>-->
+            <table>
+                <thead>
+                    <!--<g:each in="${grailsApplication.getDomainClass('jlr.Cuenta').persistentProperties}" var="p" status="i">
+                        <g:set var="propTitle">cuenta.${p.name}.label</g:set>
+                        <g:sortableColumn property="${p.name}" title="${message(code: propTitle, default: p.naturalName)}" />
+                    </g:each>-->
+                    <tr>
+                        <g:sortableColumn property="fecha" title="${message(code: 'cuenta.fecha.label', default: 'Fecha')}" />
+                        <g:sortableColumn property="importe" title="${message(code: 'cuenta.importe.label', default: 'Importe')}" />
+                        <g:sortableColumn property="nombre" title="${message(code: 'cuenta.nombre.label', default: 'Nombre')}" />
+                        <th>${message(code: 'cuenta.descripcion.label', default: 'Descripcion')}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <g:each in="${gastos}" var="gastosInstance" status="i">
+                        <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+                            <td><g:formatDate format="dd/MM/yyyy" date="${gastosInstance.fecha}"/></td>
+                            <td>${gastosInstance.importe}</td>
+                            <td>${gastosInstance.nombre}</td>
+                            <td>${gastosInstance.descripcion}</td>
+                        </tr>
+                    </g:each>
+                </tbody>
+            </table>
             <div class="pagination">
                 <g:paginate total="${gastosCount ?: 0}" />
             </div>
