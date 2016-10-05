@@ -21,11 +21,11 @@
             <div>
                 <span>
                     <g:message code="cuenta.fechaDesde.label" />
-                    <g:formatDate format="dd-MM-yyyy" date="${params.fechaDesde}"/>
+                    <g:formatDate format="dd/MM/yyyy" date="${params.fechaDesde}"/>
                 </span>
                 <span>
                     <g:message code="cuenta.fechaHasta.label" />
-                    <g:formatDate format="dd-MM-yyyy" date="${params.fechaHasta}"/>
+                    <g:formatDate format="dd/MM/yyyy" date="${params.fechaHasta}"/>
                 </span>
             </div>
             <div>
