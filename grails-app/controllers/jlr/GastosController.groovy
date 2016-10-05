@@ -18,8 +18,7 @@ class GastosController {
     def busqueda(Integer max, String sort, String order) {
         params.max = Math.min(max ?: 10, 100)
         params.sort = sort?:"fecha"
-        params.order = order?:"asc"
-        def criteria = Cuenta.createCriteria()
+        params.order = order?:"asc"        
         def gastos = busquedaService.busquedaGastos(params)
     	def gastoTotal = busquedaService.totalGastadoBusqueda(params)            
     	[gastos: gastos, gastosCount: gastos.totalCount, gastoTotal: gastoTotal?:"0"]

@@ -59,7 +59,7 @@
                 </tbody>
             </table>
             <div class="pagination">
-                <g:paginate total="${gastosCount ?: 0}" />
+                <g:paginate total="${gastosCount ?: 0}" params="${params}"/>
             </div>
         </div>
     </body>
