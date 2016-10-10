@@ -44,6 +44,7 @@ class User implements Serializable {
 	}
 
 	static mapping = {
+		table 'usuario' //es necesario este mapeo porque User es una palabra reservada en postgresql
 		password column: '`password`'
 	}
 }
