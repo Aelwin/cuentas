@@ -44,6 +44,12 @@
                     <g:submitButton name="buscar" class="search" value="${message(code: 'default.button.search.label')}" />
                 </fieldset>
             </g:form>
+            <g:form action="crearUsuario">
+                <g:field type="text" name="nombre" />
+                <g:field type="password" name="contrasenya" />
+                <g:field type="text" name="rol" />
+                <g:submitButton name="crear" />
+            </g:form>
         </div>
     </body>
 </html>    

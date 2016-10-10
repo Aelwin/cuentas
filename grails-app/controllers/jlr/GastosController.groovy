@@ -1,12 +1,15 @@
 package jlr
 
 import java.util.Date
+import jlr.security.User
+import jlr.security.Role
+import jlr.security.UserRole
 
 class GastosController {
 
     def busquedaService
 
-    def index() { 
+    def index() {        
     	respond NombreCuenta.list()
     }
 
@@ -22,6 +25,20 @@ class GastosController {
         def gastos = busquedaService.busquedaGastos(params)
     	def gastoTotal = busquedaService.totalGastadoBusqueda(params)            
     	[gastos: gastos, gastosCount: gastos.totalCount, gastoTotal: gastoTotal?:"0"]
+    }
+
+    def crearUsuario() {
+        def me = new User(username: params.nombre, password: params.contrasenya).save(flush: true)        
+        def rol = new Role(authority: params.rol).save(flush: true)        
+ 
+        UserRole.create me, rol
+
+        UserRole.withSession {
+            it.flush()
+            it.clear()
+        }
+ 
+        render "Usuario creado"
     }
 
 }
