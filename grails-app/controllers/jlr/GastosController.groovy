@@ -19,7 +19,8 @@ class GastosController {
         params.max = Math.min(max ?: 10, 100)
         params.sort = sort?:"fecha"
         params.order = order?:"asc"                
-        if (params.fechaMes) {            
+        if (params.fechaMes) {
+            //Calculamos el último día del mes seleccionado para hacer la búsqueda         
             params.fechaDesde = params.fechaMes            
             Calendar calendar = Calendar.instance
             calendar.set(Calendar.MONTH, params.fechaMes.month)
