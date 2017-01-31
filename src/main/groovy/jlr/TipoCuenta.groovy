@@ -1,5 +1,8 @@
 package jlr
 
+import groovy.transform.CompileStatic
+
+@CompileStatic
 enum TipoCuenta {
 	GASTO("Gasto"),
 	INGRESO("Ingreso")
