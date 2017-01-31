@@ -96,3 +96,6 @@ environments:
 
 server:
     contextPath: "/${info.app.name}"
+    
+quartz:
+    autoStartup: true
