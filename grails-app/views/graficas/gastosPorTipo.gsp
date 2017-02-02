@@ -34,7 +34,7 @@
 
             function cargarGrafica() {
                 $.ajax({
-                    url: '/cuentas/graficas/rellenarDatos',
+                    url: 'rellenarDatos',
                     method: 'POST',
                     dataType: 'json',
                     data: {'nombreCuenta': $("#nombreCuenta option:selected").val()},
