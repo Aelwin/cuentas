@@ -3,7 +3,6 @@ package jlr
 class ChartService {
 
     def parsearDatosChart(datos) {
-        println "Entrando a parsearDatosChart"
         def etiquetas = []
         def valores = []
         datos.each { anyo, datosAnyo ->
@@ -12,8 +11,6 @@ class ChartService {
                 valores << datosMes
             }
         }
-        println "Etiquetas: $etiquetas"
-        println "Valores: $valores"
         ["etiquetas": etiquetas, "datos": valores]
     }
 }
