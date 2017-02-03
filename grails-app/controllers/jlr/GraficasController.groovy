@@ -11,10 +11,7 @@ class GraficasController {
     def gastosPorTipo() { }
 
     def rellenarDatos() {
-        def datos = chartService.parsearDatosChart(busquedaService.gastosPorNombreAlMes(params.nombreCuenta))
-        println "Datos: $datos"
-        //render(contentType: "application/json") { datos }
-        respond datos
+        respond chartService.parsearDatosChart(busquedaService.gastosPorNombreAlMes(params.nombreCuenta))
     }
 
 }
