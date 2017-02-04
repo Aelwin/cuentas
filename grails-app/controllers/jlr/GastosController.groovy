@@ -1,7 +1,5 @@
 package jlr
 
-import java.util.Date
-
 class GastosController {
 
     def busquedaService

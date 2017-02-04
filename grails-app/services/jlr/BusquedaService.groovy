@@ -40,4 +40,16 @@ class BusquedaService {
             order(params.sort, params.order)
         }    
     }
+
+    def gastosPorNombreAlMes(nombreCuenta) {
+        def desayunos = Cuenta.findAllByTipoAndNombre(TipoCuenta.GASTO, NombreCuenta.get(nombreCuenta)).groupBy{it.fecha[Calendar.YEAR]}{it.fecha[Calendar.MONTH]}
+        def resultado =[:]
+        desayunos.each { anyo, desayunosAnyo ->
+            resultado[anyo] = [:]
+            desayunosAnyo.each { mes, desayunosMes ->
+                resultado[anyo][mes + 1] = desayunosMes*.importe.sum()
+            }
+        }
+        resultado
+    }
 }

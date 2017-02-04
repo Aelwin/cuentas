@@ -10,6 +10,7 @@
     		<ul>
                 <li><g:link controller="cuenta" action="index">Cuenta</g:link></li>
                 <li><g:link controller="gastos" action="index">Búsqueda</g:link></li>
+                <li><g:link controller="graficas" action="gastosPorTipo">Gráficas</g:link></li>
             </ul>
     	</div>
     	<div id="principal" class="content" role="main">

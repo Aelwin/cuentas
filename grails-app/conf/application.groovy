@@ -20,6 +20,7 @@ grails.plugin.springsecurity.authority.className = 'jlr.security.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/gastos/**',   	 access: ['permitAll']],
+	[pattern: '/graficas/**',  	 access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
 	[pattern: '/index',          access: ['permitAll']],
 	[pattern: '/principal',      access: ['permitAll']],
