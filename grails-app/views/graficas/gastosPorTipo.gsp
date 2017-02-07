@@ -17,18 +17,7 @@
                 var ctx = $("#miGrafica");
                 var miGrafica = new Chart(ctx, {
                     type: 'line',
-                    data: chartData,
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero:true
-                                }
-                            }]
-                        }
-                    },
-                    scaleOverride: true,
-                    scaleStartValue: 0
+                    data: chartData
                 });
             }
 
@@ -44,7 +33,7 @@
                             datasets: [{
                                 data: d.datos,
                                 label: $("#nombreCuenta option:selected").text(),
-                                backgroundColor: ['rgba(255, 99, 132, 0.2)']
+                                backgroundColor: 'rgba(255, 0, 0, 0.5)' //rojo
                             }]
                        };
                        respondCanvas();
@@ -58,7 +47,7 @@
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="search" action="index"><g:message code="default.search.label" /></g:link></li>
+                <li><a href="${createLink(action: 'compararGastosPorTipo')}"><g:message code="graficas.compararGastos"/></a></li>
             </ul>
         </div>
         <div class="content" role="main">
@@ -66,7 +55,7 @@
                 <label for="nombreCuenta">Tipo:</label>
                 <g:select id="nombreCuenta" name="nombreCuenta" from="${jlr.NombreCuenta.list()}" optionValue="nombre" optionKey="id" onchange="cargarGrafica()"/>
             </div>
-            <canvas id="miGrafica" width="200" height="200"></canvas>
+            <canvas id="miGrafica" height="210"></canvas>
         </div>
     </body>
 </html>
