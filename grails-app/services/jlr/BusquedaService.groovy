@@ -47,7 +47,7 @@ class BusquedaService {
         desayunos.each { anyo, desayunosAnyo ->
             resultado[anyo] = [:]
             desayunosAnyo.each { mes, desayunosMes ->
-                resultado[anyo][mes + 1] = desayunosMes*.importe.sum()
+                resultado[anyo][mes + 1] = desayunosMes*.importe.sum().round(2)
             }
         }
         resultado
