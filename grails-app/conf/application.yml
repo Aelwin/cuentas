@@ -79,7 +79,7 @@ endpoints:
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: org.h2.Driver
+    driverClassName: org.postgresql.Driver
     username: sa
     password:
 
