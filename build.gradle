@@ -80,8 +80,8 @@ dependencies {
     //Para desplegar en Heroku
     //compile 'org.eclipse.jetty:jetty-runner:9.2.11.v20150529'
     compile 'com.github.jsimone:webapp-runner:8.5.11.3'
-    //runtime 'org.postgresql:postgresql:9.4-1201-jdbc4'
-    runtime 'org.postgresql:postgresql:42.2.1'
+    runtime 'org.postgresql:postgresql:9.4-1201-jdbc4'
+    //runtime 'org.postgresql:postgresql:42.2.1'
 }
 
 bootRun {
