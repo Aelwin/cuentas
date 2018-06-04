@@ -76,12 +76,12 @@ dependencies {
     compile 'org.grails.plugins:spring-security-core:3.2.1'
     //compile "org.grails.plugins:spring-security-rest:2.0.0.M2"
     compile 'org.grails.plugins:quartz:2.0.1'
+    compile 'org.grails.plugins:fields:2.2.8'
 
     //Para desplegar en Heroku
     //compile 'org.eclipse.jetty:jetty-runner:9.2.11.v20150529'
     compile 'com.github.jsimone:webapp-runner:8.5.11.3'
     runtime 'org.postgresql:postgresql:9.4-1201-jdbc4'
-    //runtime 'org.postgresql:postgresql:42.2.1'
 }
 
 bootRun {
