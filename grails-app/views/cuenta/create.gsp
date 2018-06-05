@@ -27,7 +27,13 @@
             </g:hasErrors>
             <g:form action="save">
                 <fieldset class="form">
-                    <f:all bean="cuenta"/>
+                    <f:all bean="cuenta" except="fecha" />
+                    <div class="fieldcontain required">
+                      <label for="fecha">
+                        Fecha<span class="required-indicator">*</span>
+                      </label>
+                      <input type="date" name="fecha" placeholder="Seleccionar una fecha" />
+                    </div>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

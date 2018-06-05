@@ -29,7 +29,13 @@
             <g:form resource="${this.cuenta}" method="PUT">
                 <g:hiddenField name="version" value="${this.cuenta?.version}" />
                 <fieldset class="form">
-                    <f:all bean="cuenta"/>
+                    <f:all bean="cuenta" except="fecha" />
+                    <div class="fieldcontain required">
+                      <label for="fecha">
+                        Fecha<span class="required-indicator">*</span>
+                      </label>
+                      <input type="date" name="fecha" placeholder="Seleccionar una fecha" />
+                    </div>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
