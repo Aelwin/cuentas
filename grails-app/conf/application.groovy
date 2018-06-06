@@ -11,7 +11,10 @@ environments {
     }
   }
 }
-
+//indicamos que patrones tiene que convertir a Dates al hacer un bindeo con strings
+grails.databinding.dateFormats = [
+		'dd/MM/yyyy', 'yyyy-MM-dd'
+]
 
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'jlr.security.User'
@@ -41,4 +44,3 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/**/favicon.ico', filters: 'none'],
 	[pattern: '/**',             filters: 'JOINED_FILTERS']
 ]
-
